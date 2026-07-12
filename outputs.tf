@@ -1,3 +1,7 @@
+output "network_manager_management_group_connections_id" {
+  description = "Map of id values across all network_manager_management_group_connections, keyed the same as var.network_manager_management_group_connections"
+  value       = { for k, v in azurerm_network_manager_management_group_connection.network_manager_management_group_connections : k => v.id }
+}
 output "network_manager_management_group_connections_connection_state" {
   description = "Map of connection_state values across all network_manager_management_group_connections, keyed the same as var.network_manager_management_group_connections"
   value       = { for k, v in azurerm_network_manager_management_group_connection.network_manager_management_group_connections : k => v.connection_state }
